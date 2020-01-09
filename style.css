@@ -1,0 +1,71 @@
+#character {
+  width: 250px;
+  height: 600px;
+  margin: 0 auto;
+  background: url('before.jpg') no-repeat center;
+  background-size: 100%;
+  position: relative;
+}
+
+#character.burst {
+  background: url('after.jpg') no-repeat center;
+  background-size: 100%;
+}
+
+#health {
+  width: 250px;
+  border: 2px #000 solid;
+  margin: 0 auto 20px;
+}
+
+#health .con {
+  height: 20px;
+  background: crimson;
+}
+
+#controls {
+  text-align: center;
+}
+
+#controls button {
+  width: 70px;
+  height: 30px;
+}
+
+@keyframes turn {
+  0% {
+    -webkit-transform: rotate(70deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(-35deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(-10deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-30deg);
+  }
+}
+
+.hammer {
+  width: 150px;
+  height: 260px;
+  background: url('hammer.png') no-repeat center;
+  background-size: 100%;
+  position: absolute;
+  top: 80px;
+  right: -150px;
+  margin: 0;
+  transform-origin: bottom;
+}
+
+.burst .hammer {
+  animation: turn .5s linear 1 forwards;
+}

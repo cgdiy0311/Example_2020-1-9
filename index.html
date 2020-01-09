@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>vue</title>
+</head>
+
+<body>
+  <!-- 元素容器 -->
+  <div id="app-one">
+    <!-- ▼▼▼ vue demo ▼▼▼ -->
+    <section>
+      <h1>vue demo</h1>
+      <h2>{{title}}</h2>
+      <!-- 当ended值为真的时候，添加burst的class名 -->
+      <div id="character" :class="{burst:ended}">
+        <p id="hammer" class="hammer" ref="hammer" @click="metAnm = !metAnm" :class="compClasses"></p>
+
+      </div>
+      <div id="health">
+        <!-- 宽度health每次减少10 -->
+        <div class="con" :style="{width: health + '%'}"></div>
+      </div>
+      <div id="controls">
+        <!-- 每点击一次-= 10 显示取结束的反，v-show取反为真显示，为假隐藏 -->
+        <button @click="punch" v-show="!ended">Punch</button>
+        <button @click="restart">Restart</button>
+      </div>
+    </section>
+    <!-- ▲▲▲ vue demo ▲▲▲ -->
+  </div>
+  <div id="app-two">
+    <h2>{{title}}</h2>
+    <button @click="changeAppOneTitle">改变app-one的title</button>
+  </div>
+</body>
+<script src="app.js"></script>
+
+</html>
